@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>My Page</title>
+            <body>
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-nU14brUcp6StFntEOOEBvcJm4huWjB0OcIeQ3fltAfSmuZFrkAif0T+UtNGlKKQv" crossorigin="anonymous">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+                <h1>This page is django server page</h1>
+                    {% comment %} <p>Django is a high-level Python web framework that encourages rapid development and clean,
+                    pragmatic design. Built by experienced developers, it takes care of </p>
+                 {% endcomment %}
+                <style>
+                    table, th, td {
+                        border: 1px solid black;
+                        border-collapse: collapse;
+                      }
+                      
+                </style>
+                {% comment %} {{peoples}} {% endcomment %}
+                <table class="container">
+                    <tr>
+                      <th>S.No</th>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Can Vote</th>
+
+                    </tr>
+                    {% for people in peoples %}
+                    <tr>
+                      <td>{{forloop.counter}} </td>
+                      <td>{{people.name}}</td>
+                      <td>{{people.age}}</td>
+                      <td {% if people.age >= 18 %} style="background:green" {%endif%} >
+                        {% if people.age >= 18 %}
+                        👍
+                        {%else%}
+                        👎
+                        {%endif%}
+                        
+                    </td>
+
+                </tr>
+                    
+                    {%endfor%}
+                  </table>
+                  
+
+            </body>
+    </head>
+</html>
+    
+        
+    
